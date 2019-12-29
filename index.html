@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <script src="./pablo.js/pablo.js" type="application/javascript"></script>
+    <script src="logo-generator.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="style.css" />
+    
+  <title>pablo.js</title>
+</head>
+<body>
+    <div id="generator_app">
+        <form id="control_form">
+        <div id="logo">
+        </div>
+        <div id="controls">
+                <div>
+                    <label for="select-wrapper">Logo-Satz</label>
+                    <div id="select-wrapper" class="select-wrapper fa fa-angle-down">
+                        <select id="logo_set" value="">
+                            <option>JEF</option>
+                            <option>EUD</option>
+                            <option>Evil Corp</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="lines_container">
+                    <div class="line">
+                        <label for="input_line1">Erste Zeile</label>
+                        <input type="text" id="input_line1" class="input_line" />
+                    </div>
+                    <div class="line">
+                        <label for="input_line2">Zweite Zeile</label>
+                        <input type="text" id="input_line2" class="input_line" />
+                    </div>
+                </div>
+                <div>
+                    <label for="btn_generate_package"></label>
+                    <button type="button" id="btn_generate_package">Logo-Paket erstellen und herunterladen...</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
