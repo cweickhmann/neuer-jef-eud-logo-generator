@@ -10,14 +10,14 @@
 </head>
 <body>
     <div id="generator_app">
-        <form id="control_form">
+        <form id="control_form" method="post" action="test.php">
         <div id="logo">
         </div>
         <div id="controls">
                 <div>
                     <label for="select-wrapper">Logo-Satz</label>
                     <div id="select-wrapper" class="select-wrapper fa fa-angle-down">
-                        <select id="logo_set" value="">
+                        <select id="logo_set" name="logo_set" value="">
                             <option>JEF</option>
                             <option>EUD</option>
                             <option>Evil Corp</option>
@@ -27,19 +27,54 @@
                 <div id="lines_container">
                     <div class="line">
                         <label for="input_line1">Erste Zeile</label>
-                        <input type="text" id="input_line1" class="input_line" />
+                        <input type="text" id="input_line1" class="input_line" name="line[]" />
                     </div>
                     <div class="line">
                         <label for="input_line2">Zweite Zeile</label>
-                        <input type="text" id="input_line2" class="input_line" />
+                        <input type="text" id="input_line2" class="input_line" name="line[]" />
                     </div>
                 </div>
                 <div>
                     <label for="btn_generate_package"></label>
                     <button type="button" id="btn_generate_package">Logo-Paket erstellen und herunterladen...</button>
                 </div>
+                <div>
+                    <button type="submit">Bääääm!</button>
+                </div>
             </div>
         </form>
+    </div>
+    <div id="info_block">
+        <div id="colour_management">
+            <div lang="de">
+                <h1>Hinweis</h1>
+                <p>Der Logo-Generator unterstützt aus verschiedenen technischen Gründen kein CMYK sondern nur RGB.
+                Dies wird jedoch für viele Druckprodukte (zum Beispiel Flyer) benötigt. Um dieses Problem zu umgehen,
+                hat sich bisher als praktisch gangbare Lösung folgendes Vorgehen bewährt:
+                </p>
+                <ol>
+                    <li>Benutzen Sie eine den Anforderungen (z.B. Hintergrundfarben) entsprechenden Variante des RGB-Logos.</li>
+                    <li>Importieren Sie die SVG-Datei in das Grafikprogramm (z.B. Scribus oder InDesign)</li>
+                    <li>Tauschen Sie die wenigen (üblicherweise 3 oder weniger) RGB-Farben durch ihre CMYK-Pendants manuell aus.</li>
+                </ol>
+                <p>Dem Logo-Archiv, das der Logo-Generator erstellt, liegt daher eine Datei mit den korrespondierenden
+                Farbwerten bei.
+                </p>
+            <div lang="en">
+                <h1>Note</h1>
+                <p>For technical reasons, the Logo Generator only supports RGB and no CMYK.
+                However, the latter is necessary for many print products (for example flyers). To work around this problem,
+                the following procedure has so far proven practical:
+                </p>
+                <ol>
+                    <li>Use an RGB variant of the logo that suits the graphical requirements (e.g. background colour).</li>
+                    <li>Import the SVG file into the graphics programme (e.g. Scribus or InDesign)</li>
+                    <li>Exchange the few (typically 3 or less) RGB colours by their CMYK analogues.</li>
+                </ol>
+                <p>The generator adds a file to the logo archive that lists the corresponding colour values.
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
