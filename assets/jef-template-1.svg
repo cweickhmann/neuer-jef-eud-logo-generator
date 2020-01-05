@@ -19,6 +19,21 @@
    width="976.31287"
    height="269.29791"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <style>
+    .logo {
+        fill:   #008000;
+        fill-opacity: 1;
+        stroke:    none;
+    }
+    .line1 {
+        fill:   #000000;
+        fill-opacity: 1;
+    }
+    .line2 {
+        fill:   #000000;
+        fill-opacity: 1;
+    }
+  </style>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -48,10 +63,10 @@
      id="style885">
 	@font-face {
 	  font-family: ProximaNova-Regular, 'Proxima Nova Regular', proximanova;
-	  src: url('/www/htdocs/v092564/jef-logo/ProximaNova-Regular.ttf') format('truetype');
+	  src: local('./ProximaNova-Regular.otf') url('./ProximaNova-Regular.otf') format('opentype');
 	}
 	.logofont {
-		font-family:	ProximaNova-Regular, 'Proxima Nova Regular', proximanova;
+		font-family:	'Proxima Nova', ProximaNova-Regular, 'Proxima Nova Regular', proximanova;
 		font-size:	50px;
 		font-style:	normal;
 		font-variant:	normal;
@@ -70,6 +85,13 @@
 	.grey { fill: #717171; }
 	.green { fill: #00CC66; }
 	.white { fill: #FFFFFF; }
+    
+    .logo_green {fill: #00CC66;}
+    .logo_white {fill: #FFFFFF;}
+    .line1 {fill: #00CC66;}
+    .line2 {fill: #00CC66;}
+    .line3 {fill: #00CC66;}
+    .line4 {fill: #717171;}
   </style>
   <defs
      id="defs4" />
@@ -86,52 +108,51 @@
     </rdf:RDF>
   </metadata>
   <circle
-     class="green"
+     class="logo_green"
      cx="134.64896"
      cy="134.64896"
      r="134.64896"
-     id="circle"
-     style="fill:#00cc66" />
+     id="circle" />
   <path
-     class="white"
+     class="logo_white"
      d="M 67.324159,101.84125 H 212.59916 V 68.17912 H 67.324159 Z"
      id="block1"
-     inkscape:connector-curvature="0"
-     style="fill:#ffffff" />
+     inkscape:connector-curvature="0" />
   <path
-     class="white"
+     class="logo_white"
      d="m 33.66216,151.50737 h 145.275 v -33.66162 h -145.275 z"
      id="block2"
-     inkscape:connector-curvature="0"
-     style="fill:#ffffff" />
+     inkscape:connector-curvature="0" />
   <path
-     class="white"
+     class="logo_white"
      d="M 67.324159,201.11475 H 212.59916 V 167.45262 H 67.324159 Z"
      id="block3"
-     inkscape:connector-curvature="0"
-     style="fill:#ffffff" />
+     inkscape:connector-curvature="0" />
   <text
-     class="green logofont"
+     class="logofont"
      x="302.28943"
      y="76.252151"
      id="text1"
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50px;line-height:100%;font-family:ProximaNova-Regular, 'Proxima Nova Regular', proximanova;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00cc66;fill-opacity:1;stroke:none">	 <tspan
+     xml:space="preserve">
+      <tspan
    x="302.28943"
    y="76.252151"
    id="text_line1"
-   class="text_line">JUNGE</tspan>	 <tspan
+   class="text_line line1">JUNGE</tspan>
+      <tspan
    x="302.28943"
    y="126.25215"
    id="text_line2"
-   class="text_line">EUROPÄISCHE</tspan>	 <tspan
+   class="text_line line2">EUROPÄISCHE</tspan>
+      <tspan
    x="302.28943"
    y="176.25215"
    id="text_line3"
-   class="text_line">FÖDERALISTEN</tspan>	 <tspan
-   class="text_line"
+   class="text_line line3">FÖDERALISTEN</tspan>
+      <tspan
    x="302.28943"
    y="226.34181"
    id="text_line4"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50px;line-height:100%;font-family:ProximaNova-Regular, 'Proxima Nova Regular', proximanova;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00cc66;fill-opacity:1;stroke:none">HESSEN</tspan>  </text>
+   class="text_line line4">HESSEN</tspan>
+  </text>
 </svg>
