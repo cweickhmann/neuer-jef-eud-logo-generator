@@ -55,6 +55,7 @@
             input.type = "text";
             input.className = "input_line";
             input.id = input_id;
+            input.name = "line[]";
             var label = document.createElement("label");
             label.setAttribute("for", input_id);
             label.innerText = String(index+1) + ". Zeile";
