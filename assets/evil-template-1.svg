@@ -13,7 +13,7 @@
    height="33.585442mm"
    viewBox="0 0 196.23607 33.585442"
    version="1.1"
-   id="svg8"
+   id="logo-canvas"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="evil-template-1.svg">
   <style id="static">
@@ -130,23 +130,23 @@
        xml:space="preserve"
        x="33.072918"
        y="24.479166"
-       id="text_line1"
-       class="text_line line1"><tspan
+       id="t1"><tspan
          sodipodi:role="line"
-         id="tspan4522"
+         id="text_line1"
          x="33.072918"
          y="24.479166"
+         class="text_line line1"
          style="text-align:start;text-anchor:start;stroke-width:0.26458332px">Greenwashed</tspan></text>
     <text
        xml:space="preserve"
-       class="text_line line2"
        x="33.072918"
        y="35.0625"
-       id="text_line2"><tspan
+       id="t2"><tspan
          sodipodi:role="line"
-         id="tspan4526"
+         id="text_line2"
          x="33.072918"
          y="35.0625"
+         class="text_line line2"
          style="text-align:start;text-anchor:start;stroke-width:0.26458332px">Evil Corp</tspan></text>
   </g>
 </svg>

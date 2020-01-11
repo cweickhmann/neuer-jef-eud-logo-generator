@@ -14,25 +14,18 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   id="svg2"
+   id="logo-canvas"
    sodipodi:docname="jef-template-1.svg"
    width="976.31287"
    height="269.29791"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
-  <style>
-    .logo {
-        fill:   #008000;
-        fill-opacity: 1;
-        stroke:    none;
-    }
-    .line1 {
-        fill:   #000000;
-        fill-opacity: 1;
-    }
-    .line2 {
-        fill:   #000000;
-        fill-opacity: 1;
-    }
+  <style id="dynamic">
+    .logo_green {fill: #00CC66; fill-opacity: 1; }
+    .logo_white {fill: #FFFFFF; fill-opacity: 1; }
+    .line1 {fill: #00CC66; fill-opacity: 1; }
+    .line2 {fill: #00CC66; fill-opacity: 1; }
+    .line3 {fill: #00CC66; fill-opacity: 1; }
+    .line4 {fill: #717171; fill-opacity: 1; }
   </style>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -85,13 +78,6 @@
 	.grey { fill: #717171; }
 	.green { fill: #00CC66; }
 	.white { fill: #FFFFFF; }
-    
-    .logo_green {fill: #00CC66;}
-    .logo_white {fill: #FFFFFF;}
-    .line1 {fill: #00CC66;}
-    .line2 {fill: #00CC66;}
-    .line3 {fill: #00CC66;}
-    .line4 {fill: #717171;}
   </style>
   <defs
      id="defs4" />
