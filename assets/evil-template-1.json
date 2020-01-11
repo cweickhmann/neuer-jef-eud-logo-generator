@@ -1,0 +1,38 @@
+{
+"config":
+    {
+    "number_of_lines": 2,
+    "text_line_string": "text_line",
+    "bbox_padding":
+        {
+        "left":   0,
+        "right":  0,
+        "top":    0,
+        "bottom": 0
+        },
+    "outputs":
+        [
+        "RGB",
+        "blackandwhite_dark_background",
+        "blackandwhite_bright_background"
+        ],
+    "RGB":
+        {
+        "star":  "fill: #008000; stroke: none; fill-opacity: 1",
+        "line1": "fill: #000000; fill-opacity: 1",
+        "line2": "fill: #000000; fill-opacity: 1"
+        },
+    "blackandwhite_dark_background":
+        {
+        "star":  "fill: #80ff80; stroke: none; fill-opacity: 1",
+        "line1": "fill: #FFFFFF; fill-opacity: 1",
+        "line2": "fill: #FFFFFF; fill-opacity: 1"
+        },
+    "blackandwhite_bright_background":
+        {
+        "star":  "fill: #505050; stroke: none; fill-opacity: 1",
+        "line1": "fill: #000000; fill-opacity: 1",
+        "line2": "fill: #000000; fill-opacity: 1"
+        }
+    }
+}
