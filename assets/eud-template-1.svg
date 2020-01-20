@@ -93,7 +93,7 @@
      inkscape:connector-curvature="0" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Roboto Regular';-inkscape-font-specification:'Roboto Light';text-align:start;letter-spacing:1.33000004px;text-anchor:start"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Roboto Light';-inkscape-font-specification:'Roboto Light';text-align:start;letter-spacing:1px;text-anchor:start"
      x="97.809296"
      y="85.391113"
      id="t1"><tspan
@@ -102,18 +102,5 @@
        x="97.809296"
        y="85.391113"
        class="text_line line1"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0.9px;">Zeile 1</tspan></text>
-  <text
-     id="t2"
-     y="111.03108"
-     x="97.809296"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:29.33333397px;font-family:'Roboto Regular';-inkscape-font-specification:'Roboto Light';text-align:start;letter-spacing:1.33000004px;text-anchor:start"
-     xml:space="preserve"><tspan
-       dx="0"
-       y="111.03108"
-       x="97.809296"
-       id="text_line2"
-       class="text_line line2"
-       sodipodi:role="line"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0.9px">Zeile 2</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:30px;font-family:Roboto Light;-inkscape-font-specification:'Roboto Light';letter-spacing:0.75px;">Zeile 1</tspan></text>
 </svg>

@@ -6,8 +6,9 @@
 
     const assets = new Map([
         [0, ["Evil Corp", "./assets/evil-template-1.svg", 2, null]],
-        [1, ["EUD", "./assets/eud-template-1.svg", 2, null]],
-        [2, ["JEF", "./assets/jef-template-1.svg", 4, "upper"]],
+        [1, ["EUD (einzeilig)", "./assets/eud-template-1.svg", 1, null]],
+        [2, ["EUD (zweizeilig)", "./assets/eud-template-2.svg", 2, null]],
+        [3, ["JEF", "./assets/jef-template-1.svg", 4, "upper"]],
         ]);
     
     var p = new Pablo("#logo");
@@ -134,7 +135,7 @@
         var bbox = p.find("svg#logo-canvas").bbox();
         p.find("svg#logo-canvas").viewbox([bbox.x, bbox.y, bbox.width, bbox.height]);
         
-        if (current_asset[0] == "EUD") {
+        if (current_asset[0].substring(0, 3) == "EUD") {
             check_lines_width(p.find("svg#logo-canvas"));
         }
     }

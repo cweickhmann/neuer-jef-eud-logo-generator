@@ -5,7 +5,8 @@ use SVG\SVG;
 
 $asset_roots = Array(
     "Evil Corp" => "evil-template-1",
-    "EUD" => "eud-template-1",
+    "EUD (einzeilig)" => "eud-template-1",
+    "EUD (zweizeilig)" => "eud-template-2",
     "JEF" => "jef-template-1"
     );
 
@@ -109,7 +110,7 @@ function generate_svg_logo($logo_set, $logo_config, $lines, $bbox, $colour_set, 
 
 function svg2png($tmp_dir, $template_name, $colour_conf) {
     $template_name = str_replace(".svg", "", $template_name);
-    $command = "rsvg-convert -d %d -p %d -f png %s -o %s/%s_%ddpi_%s.png %s/%s.svg\n";
+    $command = "rsvg-convert -f png -a -z %d %s -o %s/%s_zoom%d_%s.png %s/%s.svg\n";
     // error_log( "colour_set[png]: " . print_r($colour_conf, True) );
     foreach ($colour_conf["png"] as $s) {
         $res = $s["resolution"];
@@ -119,8 +120,8 @@ function svg2png($tmp_dir, $template_name, $colour_conf) {
         } else {
             $bg_color_flag = "-b \"" . $s["background"] . "\"";
         }
-        $cmd_string = sprintf($command, $res, $res, $bg_color_flag, $tmp_dir, $template_name, $res, $nsuffix, $tmp_dir, $template_name);
-        // echo $cmd_string;
+        $cmd_string = sprintf($command, $res, $bg_color_flag, $tmp_dir, $template_name, $res, $nsuffix, $tmp_dir, $template_name);
+        error_log($cmd_string);
         system($cmd_string);
         }
     }
@@ -140,7 +141,7 @@ function pack2zip($tmp_dir) {
 
 	$zipArchive = new ZipArchive();
 	if (!$zipArchive->open($zip_tmp, ZIPARCHIVE::CREATE)) { die("Failed to create archive\n"); }
-	$zipArchive->addPattern( "(.*)", $tmp_dir, array("add_path" => "jef-logo/", "remove_path" => $tmp_dir ) );
+	$zipArchive->addPattern( "(.*)", $tmp_dir, array("add_path" => "logo-pack/", "remove_path" => $tmp_dir ) );
 	if (!$zipArchive->status == ZIPARCHIVE::ER_OK) { echo "Failed to write files to zip\n"; }
 	$zipArchive->close();
 	
