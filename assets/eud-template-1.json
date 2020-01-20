@@ -1,14 +1,15 @@
 {
 "config":
     {
+    "outfile_prefix": "EUD-LOGO_",
     "number_of_lines": 2,
     "text_line_string": "text_line",
     "bbox_padding":
         {
-        "left":   20,
-        "right":  20,
-        "top":    20,
-        "bottom": 20
+        "left":   120,
+        "right":  120,
+        "top":    60,
+        "bottom": 60
         },
     "outputs":
         [

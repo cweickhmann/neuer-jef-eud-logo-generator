@@ -15,7 +15,8 @@
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    width="523.17914"
    height="125.67757">
-  <style id="dynamic">
+  <style
+     id="dynamic">
     .logo {
         fill:   #007846;
         fill-opacity: 1;
@@ -51,23 +52,23 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
+     inkscape:window-width="1920"
      inkscape:window-height="1016"
      id="namedview19"
      showgrid="false"
-     inkscape:zoom="4.1662737"
-     inkscape:cx="64.041601"
-     inkscape:cy="61.746104"
+     inkscape:zoom="1.4730002"
+     inkscape:cx="183.81221"
+     inkscape:cy="122.72398"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="Ebene_1"
+     inkscape:current-layer="logo-canvas"
      fit-margin-right="200"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-bottom="10" />
-  <defs id="defs4">
-  </defs>
+  <defs
+     id="defs4" />
   <title
      id="title6">EUD_LOGO_RGB</title>
   <path
@@ -92,7 +93,7 @@
      inkscape:connector-curvature="0" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:29.33333397px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';text-align:start;letter-spacing:1.33000004px;text-anchor:start"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Roboto Regular';-inkscape-font-specification:'Roboto Light';text-align:start;letter-spacing:1.33000004px;text-anchor:start"
      x="97.809296"
      y="85.391113"
      id="t1"><tspan
@@ -101,17 +102,18 @@
        x="97.809296"
        y="85.391113"
        class="text_line line1"
-       dx="0">Zeile 1</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0.9px;fill:#000000;fill-opacity:1">Zeile 1</tspan></text>
   <text
      id="t2"
-     y="115.39111"
+     y="111.03108"
      x="97.809296"
-     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:29.33333397px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';text-align:start;letter-spacing:1.33000004px;text-anchor:start"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:29.33333397px;font-family:'Roboto Regular';-inkscape-font-specification:'Roboto Light';text-align:start;letter-spacing:1.33000004px;text-anchor:start"
      xml:space="preserve"><tspan
        dx="0"
-       y="115.39111"
+       y="111.03108"
        x="97.809296"
        id="text_line2"
        class="text_line line2"
-       sodipodi:role="line">Zeile 2</tspan></text>
+       sodipodi:role="line"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';fill:#000000;fill-opacity:1;letter-spacing:0.9px">Zeile 2</tspan></text>
 </svg>

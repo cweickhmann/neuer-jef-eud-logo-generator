@@ -1,6 +1,7 @@
 {
 "config":
     {
+    "outfile_prefix": "EVIL-LOGO_",
     "number_of_lines": 2,
     "text_line_string": "text_line",
     "bbox_padding":
