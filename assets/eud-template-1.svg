@@ -102,7 +102,7 @@
        x="97.809296"
        y="85.391113"
        class="text_line line1"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0.9px;fill:#000000;fill-opacity:1">Zeile 1</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0.9px;">Zeile 1</tspan></text>
   <text
      id="t2"
      y="111.03108"
@@ -115,5 +115,5 @@
        id="text_line2"
        class="text_line line2"
        sodipodi:role="line"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';fill:#000000;fill-opacity:1;letter-spacing:0.9px">Zeile 2</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:25px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';letter-spacing:0.9px">Zeile 2</tspan></text>
 </svg>

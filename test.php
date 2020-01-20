@@ -9,17 +9,6 @@ $asset_roots = Array(
     "JEF" => "jef-template-1"
     );
 
-$svg2pdf_conf = Array(
-);
-$svg2png_conf = Array(
-    Array("resolution" => 90, "background" => "#FFFFFF", "bg_alpha" => 1., "name_suffix" => "bg_white"),
-    Array("resolution" => 90, "background" => "#FFFFFF", "bg_alpha" => 0., "name_suffix" => "bg_transparent"),
-    Array("resolution" => 120, "background" => "#FFFFFF", "bg_alpha" => 1., "name_suffix" => "bg_white"),
-    Array("resolution" => 120, "background" => "#FFFFFF", "bg_alpha" => 0., "name_suffix" => "bg_transparent"),
-    Array("resolution" => 300, "background" => "#FFFFFF", "bg_alpha" => 1., "name_suffix" => "bg_white"),
-    Array("resolution" => 300, "background" => "#FFFFFF", "bg_alpha" => 0., "name_suffix" => "bg_transparent")
-);
-
 function dump_post() {
     // For debugging - Dump if you want to see what is being submitted
     echo "LOGO_SET: " . $_POST["logo_set"] . "<br>";
@@ -36,6 +25,11 @@ function dump_post() {
 function json_decode_file(string $fname, bool $assoc = TRUE, int $depth = 512, int $options = JSON_OBJECT_AS_ARRAY) {
     $cont = file_get_contents($fname);
     $conf = json_decode($cont, $assoc=$assoc, $depth=$depth, $options=$options);
+    if ($conf === NULL) {
+        $err_msg = sprintf("Error parsing \"%s\". Invalid JSON syntax.", $fname);
+        error_log( $err_msg );
+        throw new ParseError( $err_msg );
+    }
     return $conf;
     }
 
@@ -46,7 +40,21 @@ function tempdir($dir=false, $prefix='php') {
     if (is_dir($tempfile)) { return $tempfile; }
 	}
 
-function generate_svg_logo($logo_set, $lines, $bbox, $set, $echo_svg=False) {
+function load_config($logo_set) {
+    global $asset_roots;
+    // error_log("load_config: " . print_r($logo_set, True));
+    $asset_root = "./assets/" . $asset_roots[$logo_set];
+    return json_decode_file($asset_root . ".json");
+}
+
+function load_svg_template($logo_set) {
+    global $asset_roots;
+    // error_log("load_svg_template: " . print_r($logo_set, True));
+    $asset_root = "./assets/" . $asset_roots[$logo_set];
+    return SVG::fromFile($asset_root . ".svg");
+}
+
+function generate_svg_logo($logo_set, $logo_config, $lines, $bbox, $colour_set, $echo_svg=False) {
     /*
     * The following is a fairly weird hack to work around the
     * problem that php-svg does not properly overwrite styles
@@ -57,11 +65,7 @@ function generate_svg_logo($logo_set, $lines, $bbox, $set, $echo_svg=False) {
     * @TODO: File a bug/feature request! https://github.com/meyfa/php-svg/
     * 
     */
-    global $asset_roots;
-    
-    $asset_root = "./assets/" . $asset_roots[$logo_set];
-    $conf = json_decode_file($asset_root . ".json");
-    $svg = SVG::fromFile($asset_root . ".svg");
+    $svg = load_svg_template($logo_set);
     $doc = $svg->getDocument();
     
     for ($i=0; $i<$doc->countChildren(); $i++) {
@@ -73,7 +77,9 @@ function generate_svg_logo($logo_set, $lines, $bbox, $set, $echo_svg=False) {
             $doc->addChild($g, 1);
             $style = $doc->getChild(1);
             $css_string = "";
-            foreach($conf["config"][$set] as $tag => $cont) {
+            // error_log("generate_svg_logo 1: " . print_r($colour_set, True));
+            // error_log("generate_svg_logo 2: " . print_r($logo_config[$colour_set], True));
+            foreach($logo_config[$colour_set]["svg-class"] as $tag => $cont) {
                 $css_string .= "." . $tag . " {" . $cont . "}\n";
                 }
             $style->setCss($css_string);
@@ -81,18 +87,17 @@ function generate_svg_logo($logo_set, $lines, $bbox, $set, $echo_svg=False) {
             }
     }
     
-    for ($i = 0; $i < $conf['config']['number_of_lines']; $i++ ) {
+    for ($i = 0; $i < $logo_config["number_of_lines"]; $i++ ) {
         $doc->getElementById("text_line" . (string)($i+1) )->setValue($lines[$i]);
     }
     
     // echo "Viewbox: _" . $bbox["viewbox"] . "_\n";
     // print_r($doc->getViewBox());
     $doc->setAttribute("viewBox", $bbox["viewbox"]);
-    // $doc->setX($bbox["x"]);
-    // $doc->setY($bbox["y"]);
-    $doc->setWidth($bbox["width"]);
-    $doc->setHeight($bbox["height"]);
-    
+    $doc->setAttribute("x", $bbox["x"]); //  - $logo_config["bbox_padding"]["left"]
+    $doc->setAttribute("y", $bbox["y"]); //  - $logo_config["bbox_padding"]["top"]
+    $doc->setWidth($bbox["width"] + $logo_config["bbox_padding"]["left"] + $logo_config["bbox_padding"]["right"]);
+    $doc->setHeight($bbox["height"] + $logo_config["bbox_padding"]["top"] + $logo_config["bbox_padding"]["bottom"]);
     
     if ($echo_svg) {
         header('Content-Type: image/svg+xml');
@@ -102,13 +107,11 @@ function generate_svg_logo($logo_set, $lines, $bbox, $set, $echo_svg=False) {
     return $svg;
     }
 
-function svg2png($template_name) {
-    global $svg2png_conf;
+function svg2png($tmp_dir, $template_name, $colour_conf) {
     $template_name = str_replace(".svg", "", $template_name);
-    # file_put_contents( $outfile . ".svg", $svg );
-    header('Content-Type: text/html');
-    $command = "rsvg-convert -d %d -p %d -f png %s -o %s_%ddpi_%s.png %s.svg\n";
-    foreach ($svg2png_conf as $s) {
+    $command = "rsvg-convert -d %d -p %d -f png %s -o %s/%s_%ddpi_%s.png %s/%s.svg\n";
+    // error_log( "colour_set[png]: " . print_r($colour_conf, True) );
+    foreach ($colour_conf["png"] as $s) {
         $res = $s["resolution"];
         $nsuffix = $s["name_suffix"];
         if( $s["bg_alpha"] == 0. ) {
@@ -116,21 +119,24 @@ function svg2png($template_name) {
         } else {
             $bg_color_flag = "-b \"" . $s["background"] . "\"";
         }
-        echo sprintf($command, $res, $res, $bg_color_flag, $template_name, $res, $nsuffix, $template_name);
+        $cmd_string = sprintf($command, $res, $res, $bg_color_flag, $tmp_dir, $template_name, $res, $nsuffix, $tmp_dir, $template_name);
+        // echo $cmd_string;
+        system($cmd_string);
         }
     }
 
-function svg2pdf($template_name) {
+function svg2pdf($tmp_dir, $template_name) {
     $template_name = str_replace(".svg", "", $template_name);
-    $command = "rsvg-convert -f pdf -o %s.pdf %s.svg\n";
-    $cmd_string = sprintf($command, $template_name, $template_name);
-    echo $cmd_string;
+    $command = "rsvg-convert -f pdf -o %s/%s.pdf %s/%s.svg\n";
+    $cmd_string = sprintf($command, $tmp_dir, $template_name, $tmp_dir, $template_name);
+    // echo $cmd_string;
     system($cmd_string);
     }
 
 function pack2zip($tmp_dir) {
 	// ZIP everything in ./tmp/somefilename.zip
 	$zip_tmp = './tmp/' . date('YmdHms') . bin2hex(openssl_random_pseudo_bytes(4)) . '.zip';
+	// echo $zip_tmp;
 
 	$zipArchive = new ZipArchive();
 	if (!$zipArchive->open($zip_tmp, ZIPARCHIVE::CREATE)) { die("Failed to create archive\n"); }
@@ -142,25 +148,36 @@ function pack2zip($tmp_dir) {
     }
 
 if (isset($_POST['line'], $_POST['logo_set'], $_POST['bbox_x'], $_POST['bbox_y'], $_POST['bbox_width'], $_POST['bbox_height'])) {
-    $bbox = Array(
-        "x" => floatval($_POST['bbox_x']),
-        "y" => floatval($_POST['bbox_y']),
-        "height" => floatval($_POST['bbox_height']),
-        "width" => floatval($_POST['bbox_width']),
-        "viewbox" => $_POST['bbox_x'] . " " . $_POST['bbox_y'] . " " . $_POST['bbox_width'] . " " . $_POST['bbox_height']
-        );
-    $asset_root = "./assets/" . $asset_roots[$_POST['logo_set']];
-    $conf = json_decode_file($asset_root . ".json");
+    $logo_set = $_POST['logo_set'];
+    $conf = load_config($logo_set);
     $tmp_dir = tempdir();
+    $x = $_POST['bbox_x'] - $conf["config"]["bbox_padding"]["left"];
+    $y = $_POST['bbox_y'] - $conf["config"]["bbox_padding"]["top"];
+    $w = $_POST['bbox_width'] + $conf["config"]["bbox_padding"]["left"] + $conf["config"]["bbox_padding"]["right"];
+    $h = $_POST['bbox_height'] + $conf["config"]["bbox_padding"]["top"] + $conf["config"]["bbox_padding"]["bottom"];
+    $bbox = Array(
+        "x" => floatval($x),
+        "y" => floatval($y),
+        "height" => floatval($h),
+        "width" => floatval($w),
+        "viewbox" => $x . " " . $y . " " . $w . " " . $h
+        );
     
-    foreach( $conf["config"]["outputs"] as $set ) {
-        $svg_fname = $conf["config"]["outfile_prefix"] . "_" . $set . ".svg";
-        $svg = generate_svg_logo($_POST['logo_set'], $_POST['line'], $bbox, $set, False);
+    // error_log("_POST['logo_set']: " . print_r($_POST['logo_set'], True));
+    // error_log("conf[config][outputs]: " . print_r($conf["config"]["outputs"], True));
+    
+    foreach( $conf["config"]["outputs"] as $colour_set ) {
+        $svg_fname = $conf["config"]["outfile_prefix"] . "_" . $colour_set . ".svg";
+        // error_log("Main: " . $tmp_dir . "/" . $svg_fname . " colour_set: " . $colour_set);
+        $svg = generate_svg_logo($logo_set, $conf["config"], $_POST['line'], $bbox, $colour_set, False);
         file_put_contents($tmp_dir . "/" . $svg_fname, $svg);
-        svg2pdf($svg_fname);
-        svg2png($svg_fname);
-        // $zip_tmp = pack2zip($tmp_dir);
+        svg2pdf($tmp_dir, $svg_fname);
+        svg2png($tmp_dir, $svg_fname, $conf["config"][$colour_set]);
     }
+    $zip_tmp = pack2zip($tmp_dir);
+    header('Content-Type: application/zip');
+    readfile($zip_tmp);
+    
 } else {
     http_response_code(500);
     echo $_POST['line'], $_POST['logo_set'], $_POST['bbox_x'], $_POST['bbox_y'], $_POST['bbox_width'], $_POST['bbox_height'];

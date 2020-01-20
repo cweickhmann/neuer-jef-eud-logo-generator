@@ -6,10 +6,10 @@
     "text_line_string": "text_line",
     "bbox_padding":
         {
-        "left":   120,
-        "right":  120,
-        "top":    60,
-        "bottom": 60
+        "left":   30,
+        "right":  30,
+        "top":    15,
+        "bottom": 15
         },
     "outputs":
         [
@@ -19,21 +19,45 @@
         ],
     "RGB":
         {
-        "logo":  "fill: #007846; border: none; fill-opacity: 1",
-        "line1": "fill: #000000; fill-opacity: 1",
-        "line2": "fill: #000000; fill-opacity: 1"
+        "svg-class": {
+            "logo":  "fill: #007846; border: none; fill-opacity: 1",
+            "line1": "fill: #000000; fill-opacity: 1",
+            "line2": "fill: #000000; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 90, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 90, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 120, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 120, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 300, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 300, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         },
     "blackandwhite_dark_background":
         {
-        "logo":  "fill: #FFFFFF; border: none; fill-opacity: 1",
-        "line1": "fill: #FFFFFF; fill-opacity: 1",
-        "line2": "fill: #FFFFFF; fill-opacity: 1"
+        "svg-class": {
+            "logo":  "fill: #FFFFFF; border: none; fill-opacity: 1",
+            "line1": "fill: #FFFFFF; fill-opacity: 1",
+            "line2": "fill: #FFFFFF; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 90, "background": "#000000", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 120, "background": "#000000", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 300, "background": "#000000", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         },
     "blackandwhite_bright_background":
         {
-        "logo":  "fill: #000000; border: none; fill-opacity: 1",
-        "line1": "fill: #000000; fill-opacity: 1",              
-        "line2": "fill: #000000; fill-opacity: 1"
+        "svg-class": {
+            "logo":  "fill: #000000; border: none; fill-opacity: 1",
+            "line1": "fill: #000000; fill-opacity: 1",              
+            "line2": "fill: #000000; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 90, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 120, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 300, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         }
     }
 }

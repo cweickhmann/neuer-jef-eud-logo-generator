@@ -186,7 +186,7 @@
         httpRequest.onload = function (e) {
             console.log("Läuft!\n", httpRequest);
             console.log(httpRequest.getResponseHeader("Content-Type"));
-            saveBlob(httpRequest.response, "file.svg");
+            saveBlob(httpRequest.response, "logo-set.zip");
         }
     }
     
