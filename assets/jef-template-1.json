@@ -20,39 +20,71 @@
         ],
     "RGB":
         {
-        "logo_green": "fill: #00CC66; stroke: none; fill-opacity: 1",
-        "logo_white": "fill: #FFFFFF; stroke: none; fill-opacity: 1",
-        "line1": "fill: #00CC66; fill-opacity: 1",
-        "line2": "fill: #00CC66; fill-opacity: 1",
-        "line3": "fill: #00CC66; fill-opacity: 1",
-        "line4": "fill: #717171; fill-opacity: 1"
+        "svg-class": {
+            "logo_green": "fill: #00CC66; stroke: none; fill-opacity: 1",
+            "logo_white": "fill: #FFFFFF; stroke: none; fill-opacity: 1",
+            "line1": "fill: #00CC66; fill-opacity: 1",
+            "line2": "fill: #00CC66; fill-opacity: 1",
+            "line3": "fill: #00CC66; fill-opacity: 1",
+            "line4": "fill: #717171; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         },
     "white_dark_background":
         {
-        "logo_green": "fill: #FFFFFF; stroke: none; fill-opacity: 1",
-        "logo_white": "fill: #000000; stroke: none; fill-opacity: 0",
-        "line1": "fill: #FFFFFF; fill-opacity: 1",
-        "line2": "fill: #FFFFFF; fill-opacity: 1",
-        "line3": "fill: #FFFFFF; fill-opacity: 1",
-        "line4": "fill: #717171; fill-opacity: 1"
+        "svg-class": {
+            "logo_green": "fill: #FFFFFF; stroke: none; fill-opacity: 1",
+            "logo_white": "fill: #000000; stroke: none; fill-opacity: 1",
+            "line1": "fill: #FFFFFF; fill-opacity: 1",
+            "line2": "fill: #FFFFFF; fill-opacity: 1",
+            "line3": "fill: #FFFFFF; fill-opacity: 1",
+            "line4": "fill: #717171; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 1, "background": "#000000", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 1, "background": "#000000", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 4, "background": "#000000", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 4, "background": "#000000", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         },
     "black_bright_background":
         {
-        "logo_green": "fill: #000000; stroke: none; fill-opacity: 1",
-        "logo_white": "fill: #FFFFFF; stroke: none; fill-opacity: 0",
-        "line1": "fill: #FFFFFF; fill-opacity: 1",
-        "line2": "fill: #FFFFFF; fill-opacity: 1",
-        "line3": "fill: #FFFFFF; fill-opacity: 1",
-        "line4": "fill: #717171; fill-opacity: 1"
+        "svg-class": {
+            "logo_green": "fill: #000000; stroke: none; fill-opacity: 1",
+            "logo_white": "fill: #FFFFFF; stroke: none; fill-opacity: 1",
+            "line1": "fill: #000000; fill-opacity: 1",
+            "line2": "fill: #000000; fill-opacity: 1",
+            "line3": "fill: #000000; fill-opacity: 1",
+            "line4": "fill: #717171; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         },
     "gray_bright_background":
         {
-        "logo_green": "fill: #717171; stroke: none; fill-opacity: 1",
-        "logo_white": "fill: #FFFFFF; stroke: none; fill-opacity: 0",
-        "line1": "fill: #717171; fill-opacity: 1",
-        "line2": "fill: #717171; fill-opacity: 1",
-        "line3": "fill: #717171; fill-opacity: 1",
-        "line4": "fill: #717171; fill-opacity: 1"
+        "svg-class": {
+            "logo_green": "fill: #717171; stroke: none; fill-opacity: 1",
+            "logo_white": "fill: #FFFFFF; stroke: none; fill-opacity: 1",
+            "line1": "fill: #717171; fill-opacity: 1",
+            "line2": "fill: #717171; fill-opacity: 1",
+            "line3": "fill: #717171; fill-opacity: 1",
+            "line4": "fill: #717171; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         }
     }
 }
