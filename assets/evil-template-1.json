@@ -19,21 +19,45 @@
         ],
     "RGB":
         {
-        "star":  "fill: #008000; stroke: none; fill-opacity: 1",
-        "line1": "fill: #000000; fill-opacity: 1",
-        "line2": "fill: #000000; fill-opacity: 1"
+        "svg-class": {
+            "star":  "fill: #008000; stroke: none; fill-opacity: 1",
+            "line1": "fill: #000000; fill-opacity: 1",
+            "line2": "fill: #000000; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         },
     "blackandwhite_dark_background":
         {
-        "star":  "fill: #80ff80; stroke: none; fill-opacity: 1",
-        "line1": "fill: #FFFFFF; fill-opacity: 1",
-        "line2": "fill: #FFFFFF; fill-opacity: 1"
+        "svg-class": {
+            "star":  "fill: #80ff80; stroke: none; fill-opacity: 1",
+            "line1": "fill: #FFFFFF; fill-opacity: 1",
+            "line2": "fill: #FFFFFF; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         },
     "blackandwhite_bright_background":
         {
-        "star":  "fill: #505050; stroke: none; fill-opacity: 1",
-        "line1": "fill: #000000; fill-opacity: 1",
-        "line2": "fill: #000000; fill-opacity: 1"
+        "svg-class": {
+            "star":  "fill: #505050; stroke: none; fill-opacity: 1",
+            "line1": "fill: #000000; fill-opacity: 1",
+            "line2": "fill: #000000; fill-opacity: 1"
+            },
+        "png": [
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 1, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 1, "name_suffix": "bg_white" },
+            { "resolution": 4, "background": "#FFFFFF", "bg_alpha": 0, "name_suffix": "bg_transparent" }
+            ]
         }
     }
 }
