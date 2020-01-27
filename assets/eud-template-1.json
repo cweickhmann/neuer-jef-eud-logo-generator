@@ -6,10 +6,10 @@
     "text_line_string": "text_line",
     "bbox_padding":
         {
-        "left":   30,
-        "right":  30,
-        "top":    15,
-        "bottom": 15
+        "left":   35,
+        "right":  35,
+        "top":    18,
+        "bottom": 18
         },
     "outputs":
         [
