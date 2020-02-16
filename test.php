@@ -134,6 +134,12 @@ function svg2pdf($tmp_dir, $template_name) {
     system($cmd_string);
     }
 
+function copySpecialAssets($tmp_dir, $special_assets_list=Array()) {
+    foreach ($special_assets_list as $fname) {
+        copy("./assets/" . $fname, $tmp_dir . "/" . basename($fname));
+        }
+    }
+
 function pack2zip($tmp_dir) {
 	// ZIP everything in ./tmp/somefilename.zip
 	$zip_tmp = './tmp/' . date('YmdHms') . bin2hex(openssl_random_pseudo_bytes(4)) . '.zip';
@@ -174,6 +180,7 @@ if (isset($_POST['line'], $_POST['logo_set'], $_POST['bbox_x'], $_POST['bbox_y']
         file_put_contents($tmp_dir . "/" . $svg_fname, $svg);
         svg2pdf($tmp_dir, $svg_fname);
         svg2png($tmp_dir, $svg_fname, $conf["config"][$colour_set]);
+        copySpecialAssets($tmp_dir, $conf["config"]["special-assets"]["extra-files-for-archive"]);
     }
     $zip_tmp = pack2zip($tmp_dir);
     header('Content-Type: application/zip');
