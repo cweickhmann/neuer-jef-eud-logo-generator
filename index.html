@@ -5,8 +5,9 @@
     <script src="./pablo.js/pablo.js" type="application/javascript"></script>
     <script src="logo-generator.js" type="application/javascript"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mfglabs-iconset/css/mfglabs_iconset.css" />
     
-  <title>pablo.js</title>
+  <title>Logo Generator 2</title>
 </head>
 <body>
     <div id="generator_app">
@@ -42,7 +43,7 @@
         </form>
     </div>
     <div id="info_block">
-        <div id="colour_management">
+        <div id="colour_management logogen_information"> <!-- icon-information_white -->
             <div lang="de">
                 <h1>Hinweis</h1>
                 <p>Der Logo-Generator unterstützt aus verschiedenen technischen Gründen kein CMYK sondern nur RGB.
@@ -70,6 +71,55 @@
                 </ol>
                 <p>The generator adds a file to the logo archive that lists the corresponding colour values.
                 </p>
+            </div>
+        </div>
+        <div id="logo_width"> <!-- icon-information_white -->
+            <div lang="de">
+            <h1>Hinweis</h1>
+            <p>Der selbst eingegebene Text soll nicht breiter sein als der "EuropaUnion"-Schriftzug.
+            Da dies nicht immer möglich ist, wird auch bei Überschreitung ein Logo-Satz erzeugt. Dieser enthält
+            die Markierungen zur Überbreite (gestrichelte Linie, grauer Bereich) jedoch nicht.</p>
+            <h1>Tipps</h1>
+            <p>Sie können Zeichen sparen, indem Sie unnötige Dinge weglassen.</p>
+            <p>Beispielsweise soll die Bezeichnung der Rechtsform ("e.V.") nicht im Logo erscheinen. Lassen Sie sie einfach weg. Auch sollten Organisationsbezeichnungen wie "Landesverband", "Kreisverband" oder "Ortsverband" nicht
+            im Logo erscheinen.</p>
+            <p>Es gibt zwei Varianten des Logos: Einzeilig und Zweizeilig. Passt der Name nicht in die einzeilige Variante,
+            versuchen Sie es mit der zweizeiligen Variante.</p>
+            </div>
+            <div lang="en">
+            <h1>Note</h1>
+            <p>The text you enter is supposed to not exceed the "EuropaUnion" lettering.
+            As this is not always possible, a logo set is generated anyway. The markings you see to
+            tell you, that text is too wide, will not show up in the logo set.</p>
+            <h1>Tips</h1>
+            <p>You can save characters by leaving out unnecessary stuff.</p>
+            <p>For example, you should leave out the legal form ("e.V.") as it is not supposed to show in the logo.
+            Likewise, organisational units like "chapter", "local union", "national association"
+            are not supposed to show.</p>
+            <p>There are two variations of the logo: single-line and two-line. If the chapter name does not fit
+            in the single-line version, try the two-line version.</p>
+            </div>
+        </div>
+        <div id="acknowledgements">
+            <div lang="de">
+            <h1>Ehre, wem Ehre gebührt!</h1>
+            <p>Dieser Logo-Generator verwendet verschiedene Opensource-Bibliotheken und -Programme, ohne die er nicht funktionieren oder noch schrecklicher aussehen würde.</p>
+            <p>Teile dieser Pakete in ggf. veralteten Versionen sind in diesem Repository enthalten.</p>
+            <ul>
+                <li><a href="https://mfglabs.github.io/mfglabs-iconset/">Das Iconset von MFG Labs</a> (<a href="https://creativecommons.org/licenses/by/3.0/deed.de">unter CC-BY 3.0</a>)</li>
+                <li><a href="https://github.com/premasagar/pablo">pablo.js</a> (<a href="https://opensource.org/licenses/mit-license.php">unter MIT License</a>)</li>
+                <li><a href="https://github.com/meyfa/php-svg">php-svg</a> (<a href="https://opensource.org/licenses/mit-license.php">unter MIT License</a>)</li>
+            </ul>
+            </div>
+            <div lang="en">
+            <h1>Hall of Coders' Fame!</h1>
+            <p>This logo generator uses several open source libraries without which it would not function or look even more hideous.</p>
+            <p>Parts of these packages (in likely outdated versions) are part of this repository.</p>
+            <ul>
+                <li><a href="https://mfglabs.github.io/mfglabs-iconset/">The Icon Set by MFG Labs</a> (<a href="https://creativecommons.org/licenses/by/3.0/deed.de">under CC-BY 3.0</a>)</li>
+                <li><a href="https://github.com/premasagar/pablo">pablo.js</a> (<a href="https://opensource.org/licenses/mit-license.php">under MIT License</a>)</li>
+                <li><a href="https://github.com/meyfa/php-svg">php-svg</a> (<a href="https://opensource.org/licenses/mit-license.php">under MIT License</a>)</li>
+            </ul>
             </div>
         </div>
     </div>
