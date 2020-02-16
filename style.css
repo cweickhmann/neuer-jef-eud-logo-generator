@@ -82,11 +82,12 @@ body {
     width: 1em;
 }
 #controls .select-wrapper::before {
+    font-family: 'mfg_labs_iconsetregular'; /* Needs MFG Labs Iconset to be loaded (mfglabs_iconset.css) */
     color: #444;
     font-size: 20px;
     pointer-events: none;
     position: absolute;
-    content: "v";
+    content: "\f004";
     right: 15px;
     top: 10px;
 }
