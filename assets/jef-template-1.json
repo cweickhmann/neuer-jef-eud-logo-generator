@@ -18,6 +18,13 @@
         "black_bright_background",
         "gray_bright_background"
         ],
+    "special-assets": {
+        "extra-files-for-archive": [
+            "jef-template-1/ProximaNova-Regular.otf",
+            "jef-template-1/ProximaNova-Regular.woff",
+            "jef-template-1/README.txt"
+            ]
+        },
     "RGB":
         {
         "svg-class": {

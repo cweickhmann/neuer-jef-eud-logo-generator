@@ -19,7 +19,7 @@
         ],
     "special-assets": {
         "extra-files-for-archive": [
-            "evil-template-1/Roboto-Light.ttf",
+            "evil-template-1/OpenSans-Regular.ttf",
             "evil-template-1/Roboto-Regular.ttf",
             "evil-template-1/README.txt"
             ]

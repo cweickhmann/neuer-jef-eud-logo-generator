@@ -17,6 +17,13 @@
         "blackandwhite_dark_background",
         "blackandwhite_bright_background"
         ],
+    "special-assets": {
+        "extra-files-for-archive": [
+            "eud-template-1/Roboto-Light.ttf",
+            "eud-template-1/Roboto-Regular.ttf",
+            "eud-template-1/README.txt"
+            ]
+        },
     "RGB":
         {
         "svg-class": {
